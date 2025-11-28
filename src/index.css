@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-display: 'Archivo Black', sans-serif;
+
+  --color-swiss-red: #FF3E00;
+  --color-swiss-black: #0A0A0A;
+  --color-swiss-white: #F7F3F0;
+}
+
+:root {
+  color-scheme: light;
+  background-color: var(--color-swiss-white);
+  color: var(--color-swiss-black);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
