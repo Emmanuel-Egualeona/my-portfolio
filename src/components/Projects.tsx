@@ -4,27 +4,43 @@ import { ExternalLink, Github } from 'lucide-react';
 
 const projects = [
     {
-        title: 'E-Commerce Platform',
-        category: 'Full Stack',
-        description: 'Built a scalable shopping experience with secure Stripe payments and real-time inventory management, resulting in a 40% increase in user engagement.',
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
-        tech: ['React', 'TypeScript', 'Tailwind', 'Node.js'],
-        links: { demo: '#', repo: '#' }
-    },
-    {
-        title: 'Task Management App',
-        category: 'Productivity',
-        description: 'Developed a drag-and-drop task organizer using React DnD, improving team collaboration efficiency by streamlining workflow tracking.',
-        image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80',
-        tech: ['React', 'Redux', 'Firebase'],
-        links: { demo: '#', repo: '#' }
-    },
-    {
-        title: 'Portfolio V1',
-        category: 'Design',
-        description: 'Designed a minimalist personal portfolio focusing on accessibility and performance, achieving a perfect 100 Lighthouse score.',
+        title: 'MLSCN Website Revamp',
+        category: 'UI/UX & Frontend',
+        description: 'Led frontend rebuild and UI/UX improvements for the Medical Laboratory Science Council of Nigeria during my industrial training. Enhanced visual identity, accessibility standards, and overall site performance.',
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-        tech: ['HTML', 'SCSS', 'JavaScript'],
+        tech: ['React', 'TypeScript', 'Tailwind CSS', 'Figma'],
+        links: { demo: '#', repo: '#' }
+    },
+    {
+        title: 'Student Expense Tracker',
+        category: 'Full-Stack Application',
+        description: 'Built a complete expense management system with PostgreSQL backend and React frontend. Features include transaction management, mobile-responsive views, PDF export, and upcoming AI-powered expense analysis with email scanning.',
+        image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
+        tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Vite'],
+        links: { demo: '#', repo: '#' }
+    },
+    {
+        title: 'Driver Tracking System',
+        category: 'Enterprise Solution',
+        description: 'Developed an in-house tracking application for managing drivers, deliveries, and movement logs. Streamlined logistics operations with real-time updates and comprehensive reporting.',
+        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80',
+        tech: ['React', 'Node.js', 'Express', 'PostgreSQL'],
+        links: { demo: '#', repo: '#' }
+    },
+    {
+        title: 'AgroCraft E-Commerce',
+        category: 'UI Redesign',
+        description: 'Redesigned multiple pages for an agricultural e-commerce platform. Improved user flow, modernized the interface, and enhanced the overall shopping experience with better navigation and visual hierarchy.',
+        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
+        tech: ['React', 'Tailwind CSS', 'Figma'],
+        links: { demo: '#', repo: '#' }
+    },
+    {
+        title: 'Traffic Simulation',
+        category: 'Python Project',
+        description: 'Created a multi-car traffic simulation using Python and Pygame. Features include traffic light systems, vehicle turning mechanics, and expandable simulation parameters for testing traffic flow scenarios.',
+        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80',
+        tech: ['Python', 'Pygame', 'OOP'],
         links: { demo: '#', repo: '#' }
     }
 ];
@@ -32,16 +48,17 @@ const projects = [
 const Projects: React.FC = () => {
     return (
         <section id="work" className="py-24">
-            <div className="flex items-end justify-between mb-16">
-                <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter">
-                    SELECTED <br /> WORK
-                </h2>
-                <span className="hidden md:block text-swiss-red font-medium tracking-widest uppercase mb-2">
-                    (03)
-                </span>
-            </div>
+            <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-3xl md:text-5xl lg:text-6xl font-display font-bold tracking-tighter mb-8 md:mb-12 lg:mb-16"
+            >
+                SELECTED <br /> WORK
+            </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 md:gap-x-8 gap-y-10 md:gap-y-16">
                 {projects.map((project, index) => (
                     <motion.article
                         key={index}
@@ -61,19 +78,19 @@ const Projects: React.FC = () => {
                         </div>
 
                         <div className="flex justify-between items-start mb-2">
-                            <h3 className="text-2xl font-bold tracking-tight group-hover:text-swiss-red transition-colors">
+                            <h3 className="text-xl md:text-2xl font-bold tracking-tight group-hover:text-swiss-red transition-colors">
                                 {project.title}
                             </h3>
                             <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <a href={project.links.repo} className="hover:text-swiss-red"><Github size={20} /></a>
-                                <a href={project.links.demo} className="hover:text-swiss-red"><ExternalLink size={20} /></a>
+                                <a href={project.links.repo} className="hover:text-swiss-red" aria-label="View repository"><Github size={20} /></a>
+                                <a href={project.links.demo} className="hover:text-swiss-red" aria-label="View demo"><ExternalLink size={20} /></a>
                             </div>
                         </div>
 
                         <p className="text-sm font-medium text-swiss-red uppercase tracking-widest mb-2">
                             {project.category}
                         </p>
-                        <p className="text-gray-600 mb-4 line-clamp-2">
+                        <p className="text-sm md:text-base text-gray-600 mb-4 line-clamp-3">
                             {project.description}
                         </p>
 

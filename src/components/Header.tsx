@@ -1,9 +1,9 @@
-import React from 'react';
-import { Menu, X } from 'lucide-react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 const Header: React.FC = () => {
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const navItems = [
         { name: 'Work', href: '#work' },
@@ -16,21 +16,30 @@ const Header: React.FC = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
                 <div className="flex items-center justify-between h-24">
                     {/* Logo */}
-                    <a href="#" className="text-3xl font-display font-bold tracking-tighter hover:text-swiss-red transition-colors">
+                    <motion.a
+                        href="#"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="text-3xl font-display font-bold tracking-tighter hover:text-swiss-red transition-colors"
+                    >
                         EMMANUEL.
-                    </a>
+                    </motion.a>
 
                     {/* Desktop Nav */}
                     <nav className="hidden md:flex space-x-12">
-                        {navItems.map((item) => (
-                            <a
+                        {navItems.map((item, index) => (
+                            <motion.a
                                 key={item.name}
                                 href={item.href}
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
                                 className="text-sm font-bold uppercase tracking-widest hover:text-swiss-red transition-colors relative group"
                             >
                                 {item.name}
                                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-swiss-red transition-all duration-300 group-hover:w-full" />
-                            </a>
+                            </motion.a>
                         ))}
                     </nav>
 
