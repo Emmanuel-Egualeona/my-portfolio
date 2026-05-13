@@ -16,7 +16,7 @@ const Contact: React.FC = () => {
                         LET'S BUILD <br /> SOMETHING
                     </h2>
                     <p className="text-base md:text-xl text-gray-600 max-w-md mb-6 md:mb-8">
-                        I'm available for freelance projects and full-time opportunities. Let's create something impactful together.
+                        I work with businesses that want to convert website visitors into customers, generate more leads, and build digital solutions that support revenue growth.
                     </p>
                     <a
                         href="mailto:eegualeona@gmail.com"

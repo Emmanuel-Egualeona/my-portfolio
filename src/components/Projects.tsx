@@ -1,48 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
-
+import topmindImage from '../assets/topmindfans.png';
+import zubbyImage from '../assets/zubby.png';
+import mlscnImage from '../assets/mlscn.png';
 const projects = [
     {
         title: 'MLSCN Website Revamp',
-        category: 'UI/UX & Frontend',
-        description: 'Led frontend rebuild and UI/UX improvements for the Medical Laboratory Science Council of Nigeria during my industrial training. Enhanced visual identity, accessibility standards, and overall site performance.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+        category: 'Business Website',
+        description: 'Led the rebuild of the Medical Laboratory Science Council of Nigeria website to improve trust, clarity, and lead generation. The redesign strengthened their brand presence and made it easier for visitors to take action.',
+        image: mlscnImage,
         tech: ['React', 'TypeScript', 'Tailwind CSS', 'Figma'],
-        links: { demo: '#', repo: '#' }
+        links: { demo: 'https://www.mlscn.gov.ng/', repo: '#' }
     },
     {
+        title: 'Zubby Power Energy Ventures',
+        category: 'Diesel Delivery Company',
+        description: 'Created a website for Zubby Power Energy Ventures, a diesel delivery company in Abuja, to streamline delivery operations, improve business visibility, and reduce manual tracking overhead for logistics teams.',
+        image: zubbyImage,
+        tech: ['React', 'Node.js', 'Express', 'PostgreSQL'],
+        links: { demo: 'https://zubbypowerenergyventures.com.ng/', repo: '#' }
+    },
+    {
+        title: 'TopmindFans E-Commerce',
+        category: 'Sales Experience',
+        description: 'Redesigned the TopmindFans website to improve product discovery, simplify checkout flows, and increase shopper confidence. The site showcases premium branded hand fans for business promotion and event souvenirs, with over 100,000 fans delivered worldwide.',
+        image: topmindImage,
+        tech: ['React', 'Tailwind CSS', 'Figma'],
+        links: { demo: 'https://topmindfans.com.ng/', repo: '#' }
+    },
+        {
         title: 'Student Expense Tracker',
-        category: 'Full-Stack Application',
-        description: 'Built a complete expense management system with PostgreSQL backend and React frontend. Features include transaction management, mobile-responsive views, PDF export, and upcoming AI-powered expense analysis with email scanning.',
+        category: 'Growth Tool',
+        description: 'Built a full-stack finance app that helps users manage expenses effectively while creating a foundation for future conversion features and analytics-driven insights.',
         image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
         tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Vite'],
         links: { demo: '#', repo: '#' }
     },
-    {
-        title: 'Driver Tracking System',
-        category: 'Enterprise Solution',
-        description: 'Developed an in-house tracking application for managing drivers, deliveries, and movement logs. Streamlined logistics operations with real-time updates and comprehensive reporting.',
-        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80',
-        tech: ['React', 'Node.js', 'Express', 'PostgreSQL'],
-        links: { demo: '#', repo: '#' }
-    },
-    {
-        title: 'AgroCraft E-Commerce',
-        category: 'UI Redesign',
-        description: 'Redesigned multiple pages for an agricultural e-commerce platform. Improved user flow, modernized the interface, and enhanced the overall shopping experience with better navigation and visual hierarchy.',
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80',
-        tech: ['React', 'Tailwind CSS', 'Figma'],
-        links: { demo: '#', repo: '#' }
-    },
-    {
-        title: 'Traffic Simulation',
-        category: 'Python Project',
-        description: 'Created a multi-car traffic simulation using Python and Pygame. Features include traffic light systems, vehicle turning mechanics, and expandable simulation parameters for testing traffic flow scenarios.',
-        image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80',
-        tech: ['Python', 'Pygame', 'OOP'],
-        links: { demo: '#', repo: '#' }
-    }
+
 ];
 
 const Projects: React.FC = () => {
@@ -68,14 +63,21 @@ const Projects: React.FC = () => {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="group cursor-pointer"
                     >
-                        <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-6">
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                            />
-                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                        </div>
+                        <a
+                            href={project.links.demo !== '#' ? project.links.demo : '#'}
+                            target={project.links.demo !== '#' ? '_blank' : undefined}
+                            rel={project.links.demo !== '#' ? 'noopener noreferrer' : undefined}
+                            className="block"
+                        >
+                            <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-6 cursor-pointer">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
+                                />
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                            </div>
+                        </a>
 
                         <div className="flex justify-between items-start mb-2">
                             <h3 className="text-xl md:text-2xl font-bold tracking-tight group-hover:text-swiss-red transition-colors">

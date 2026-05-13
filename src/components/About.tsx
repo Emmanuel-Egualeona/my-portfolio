@@ -35,16 +35,16 @@ const About: React.FC = () => {
                     </h2>
                     <div className="space-y-4 md:space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
                         <p>
-                            I'm a Full-Stack Developer based in Abuja, Nigeria, with a strong focus on frontend development and a passion for building modern, accessible web applications.
+                            I'm a Full-Stack Developer based in Abuja, Nigeria, focused on helping businesses use the web to close more sales, nurture leads, and grow customer engagement.
                         </p>
                         <p>
-                            During my industrial training at the Medical Laboratory Science Council of Nigeria (MLSCN), I gained hands-on experience in hardware and software troubleshooting, server rack upgrades, network switch installations, and led the redesign of their website—improving both visual identity and performance.
+                            During my industrial training at the Medical Laboratory Science Council of Nigeria (MLSCN), I led a website redesign that strengthened their visual identity, improved performance, and positioned the organisation to attract more enquiries.
                         </p>
                         <p>
-                            I specialize in React and TypeScript for frontend work, while building scalable backend systems with Node.js, Express, and PostgreSQL. I care deeply about clean UI, strong architecture, and writing code that's maintainable and performant.
+                            I build conversion-aware digital experiences with React, TypeScript, Node.js, Express, and PostgreSQL. My priority is delivering clean UI, strong architecture, and dependable solutions that support business goals.
                         </p>
                         <p>
-                            When I'm not coding, I'm exploring new technologies, building side projects like traffic simulations, or contributing to solutions that make a real impact.
+                            When I'm not coding, I'm exploring new technologies, building side projects like traffic simulations, and designing systems that solve real business problems.
                         </p>
                     </div>
                 </div>

@@ -4,16 +4,16 @@ import { motion } from 'framer-motion';
 const Skills: React.FC = () => {
     const skillCategories = [
         {
-            title: 'Frontend',
-            skills: ['React', 'TypeScript', 'Tailwind CSS', 'HTML/CSS', 'Responsive Design', 'Vite']
+            title: 'Business Web',
+            skills: ['Conversion-Focused UX', 'Landing Pages', 'Lead Capture', 'Analytics', 'SEO Basics', 'Responsive Design']
         },
         {
-            title: 'Backend',
-            skills: ['Node.js', 'Express', 'PostgreSQL', 'RESTful APIs', 'Server Architecture']
+            title: 'Development',
+            skills: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'RESTful APIs']
         },
         {
             title: 'Tools & Technologies',
-            skills: ['Git', 'Figma', 'VS Code', 'Python', 'Pygame', 'System Administration']
+            skills: ['Figma', 'Git', 'VS Code', 'Tailwind CSS', 'Server Architecture', 'Performance Optimization']
         }
     ];
 
