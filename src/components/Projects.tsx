@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
 import topmindImage from '../assets/Topmindfans.png';
-import zubbyImage from './assets/Zubby.png';
+import zubbyImage from '../assets/Zubby.png';
 import mlscnImage from '../assets/Mlscn.png';
 const projects = [
     {
